@@ -1,4 +1,18 @@
 var Moto = (function() {	
+	function updateViewerSpacing() {
+		var image = document.getElementsByClassName('viewer-image')[0],
+			body = document.body,
+			prevBtn = document.getElementsByClassName('viewer-prev')[0],
+			nextBtn = document.getElementsByClassName('viewer-next')[0],
+			margin = ((body.clientWidth * .9) - image.width) / 2 + "px";
+			
+		image.style['margin-left'] = margin;
+		prevBtn.style['left'] = margin;
+		nextBtn.style['right'] = margin;
+		document.getElementsByClassName('viewer-btn')[0].style['height'] = image.height + 'px';
+		document.getElementsByClassName('viewer-btn')[1].style['height'] = image.height + 'px';
+	}
+	
 	return {
 		currentFolder: 1,
 		currentImage: 1,
@@ -20,11 +34,18 @@ var Moto = (function() {
 				event.stopPropagation();
 				Moto.nextImage();
 			}
+			
+			window.onresize = updateViewerSpacing.bind(this);
 		},
 		
 		showViewer: function(index) {
-			document.getElementsByClassName('viewer-image')[0].src = '/main/builds/' + index +  '/1.jpg';
-			document.getElementsByClassName('viewer')[0].style['display'] = 'block';
+			var image = new Image();
+			image.src = '/main/builds/' + index +  '/1.jpg';
+			image.onload = function() {
+				document.getElementsByClassName('viewer-image')[0].src = image.src;
+				document.getElementsByClassName('viewer')[0].style['display'] = 'block';
+				updateViewerSpacing();
+			};
 			
 			Moto.currentFolder = index;
 			Moto.currentImage = 1;
@@ -49,7 +70,13 @@ var Moto = (function() {
 			} else {
 				Moto.currentImage--;
 			}
-			document.getElementsByClassName('viewer-image')[0].src = '/main/builds/' + Moto.currentFolder +  '/' + Moto.currentImage + '.jpg';
+			
+			var image = new Image();
+			image.src = '/main/builds/' + Moto.currentFolder +  '/' + Moto.currentImage + '.jpg';
+			image.onload = function() {
+				document.getElementsByClassName('viewer-image')[0].src = image.src;
+				updateViewerSpacing();
+			};
 		},
 		
 		nextImage: function() {
@@ -58,7 +85,13 @@ var Moto = (function() {
 			} else {
 				Moto.currentImage++;
 			}
-			document.getElementsByClassName('viewer-image')[0].src = '/main/builds/' + Moto.currentFolder +  '/' + Moto.currentImage + '.jpg';
+			
+			var image = new Image();
+			image.src = '/main/builds/' + Moto.currentFolder +  '/' + Moto.currentImage + '.jpg';
+			image.onload = function() {
+				document.getElementsByClassName('viewer-image')[0].src = image.src;
+				updateViewerSpacing();
+			};
 		}
 	};
 })();

@@ -104,25 +104,45 @@ body {
 	display: none;
 }
 
+.viewer-container {
+	height: 90%;
+    width: 90%;
+    position: absolute;
+    top: 5%;
+    margin-left: 5%;
+}
+
 .viewer-image {
-	width: 90%;
-    left: 5%;
-	top: 5%;
+	max-height: 100%;
+	max-width: 100%;
     position: absolute;
 }
 
-.viewer-prev {
-	width: 30px;
-    height: 100px;
+.viewer-btn {
+	width: 50px;
+    max-height: 100%;
     position: absolute;
-    background: black;
+    background: rgba(255, 255, 255, 0);
+    z-index: 100;
+	text-align: center;
+	cursor: pointer;
+}
+
+.viewer-btn:hover {
+	background: rgba(255, 255, 255, .5);
+}
+
+.viewer-prev {
 	left: 0;
 }
 
 .viewer-next {
-	width: 30px;
-    height: 100px;
+    right: 0;
+}
+
+.viewer-icon {
+	height: 30px;
     position: absolute;
-    background: black;
-	right: 0;
+    top: 45%;
+    left: 10px;
 }
