@@ -40,7 +40,7 @@ var Moto = (function() {
 		
 		showViewer: function(index) {
 			var image = new Image();
-			image.src = '/main/builds/' + index +  '/1.jpg';
+			image.src = 'main/builds/' + index +  '/1.jpg';
 			image.onload = function() {
 				document.getElementsByClassName('viewer-image')[0].src = image.src;
 				document.getElementsByClassName('viewer')[0].style['display'] = 'block';
@@ -56,7 +56,7 @@ var Moto = (function() {
 					Moto.maxImage = req.responseText.match(/a href/g).length;
 				}
 			}
-			req.open("GET", "/main/builds/" + Moto.currentFolder + "/", true);
+			req.open("GET", "main/builds/" + Moto.currentFolder + "/", true);
 			req.send();
 		},
 		
@@ -72,7 +72,7 @@ var Moto = (function() {
 			}
 			
 			var image = new Image();
-			image.src = '/main/builds/' + Moto.currentFolder +  '/' + Moto.currentImage + '.jpg';
+			image.src = 'main/builds/' + Moto.currentFolder +  '/' + Moto.currentImage + '.jpg';
 			image.onload = function() {
 				document.getElementsByClassName('viewer-image')[0].src = image.src;
 				updateViewerSpacing();
@@ -87,7 +87,7 @@ var Moto = (function() {
 			}
 			
 			var image = new Image();
-			image.src = '/main/builds/' + Moto.currentFolder +  '/' + Moto.currentImage + '.jpg';
+			image.src = 'main/builds/' + Moto.currentFolder +  '/' + Moto.currentImage + '.jpg';
 			image.onload = function() {
 				document.getElementsByClassName('viewer-image')[0].src = image.src;
 				updateViewerSpacing();
