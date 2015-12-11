@@ -16,7 +16,7 @@ var Moto = (function() {
 	return {
 		currentFolder: 1,
 		currentImage: 1,
-		maxImage: 0,
+		maxImage: [4, 3],
 		
 		initViewer: function() {
 			var builds = document.getElementsByClassName('builds-item');
@@ -49,15 +49,6 @@ var Moto = (function() {
 			
 			Moto.currentFolder = index;
 			Moto.currentImage = 1;
-			
-			var req = new XMLHttpRequest();
-			req.onreadystatechange = function() {
-				if (req.readyState == 4 && req.status == 200) {
-					Moto.maxImage = req.responseText.match(/a href/g).length;
-				}
-			}
-			req.open("GET", "main/builds/" + Moto.currentFolder + "/", true);
-			req.send();
 		},
 		
 		hideViewer: function() {
@@ -66,7 +57,7 @@ var Moto = (function() {
 		
 		prevImage: function() {
 			if (Moto.currentImage === 1) {
-				Moto.currentImage = Moto.maxImage;
+				Moto.currentImage = Moto.maxImage[Moto.currentFolder-1];
 			} else {
 				Moto.currentImage--;
 			}
@@ -80,7 +71,7 @@ var Moto = (function() {
 		},
 		
 		nextImage: function() {
-			if (Moto.currentImage === Moto.maxImage) {
+			if (Moto.currentImage === Moto.maxImage[Moto.currentFolder-1]) {
 				Moto.currentImage = 1;
 			} else {
 				Moto.currentImage++;
