@@ -49,6 +49,12 @@ var Moto = (function() {
 			
 			Moto.currentFolder = index;
 			Moto.currentImage = 1;
+			
+			//preload images
+			for (var i=2; i<=Moto.maxImage[Moto.currentFolder-1]; i++) {
+				var img = new Image();
+				img.src = 'main/builds/' + index + '/' + i + '.jpg';
+			}
 		},
 		
 		hideViewer: function() {
