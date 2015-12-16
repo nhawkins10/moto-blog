@@ -19,7 +19,7 @@ layout: default
 
 {% for post in site.posts %}
 	<div class="mdl-cell mdl-cell--middle mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone demo-card-wide mdl-card mdl-shadow--2dp">
-	  <div class="mdl-card__title" style="height:200px;background:url({{ site.baseurl }}/assets/{{  post.test }}/1.jpg) center / cover">
+	  <div class="mdl-card__title" style="height:200px;background:url({{ site.baseurl }}/assets/{{  post.test }}/{{ post.items[0].item.link }}) center / cover">
 		<h2 class="mdl-card__title-text"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
 	  </div>
 	  <div class="mdl-card__supporting-text">
