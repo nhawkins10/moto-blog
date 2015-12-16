@@ -6,7 +6,7 @@ test: 2015-11-11-Rebuilding-carburetors
 date:   2015-11-11
 items:
 - item:
-    link: 1.JPG
+    link: 1.jpg
     comment: Getting everything laid out and ready to be cleaned. I used lots of carb cleaner, compressed air, and q-tips to get it all cleaned out.
 - item:
     link: 2.JPG
