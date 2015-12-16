@@ -1,0 +1,12 @@
+# Site settings
+title: Restoration Moto
+email: mail@restorationmoto.com
+description: > # this means to ignore newlines until "baseurl:"
+  The story of my first motorcycle rebuild. I'm working to convert a
+  non-running, 35 year old bike into something cool that
+  I can use as a daily commuter.
+baseurl: "/moto-blog" # the subpath of your site, e.g. /blog/
+url: "https://nhawkins10.github.io" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
