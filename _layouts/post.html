@@ -12,6 +12,7 @@ layout: default
 	<div class="mdl-cell mdl-cell--12-col">
 		<h1 class="post-title">{{ page.title }}</h1>
 		<p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}</p>
+		<p>{{ page.summary }}</p>
 	</div>
     {% for temp in page.items %}
 		<div class="mdl-cell mdl-cell--middle mdl-cell--1-col mdl-cell--hide-phone"></div>
