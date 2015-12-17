@@ -1,0 +1,14 @@
+.resources-card > .mdl-card__title {
+	font-size: 18px;
+}
+
+.resources-card a {
+	text-decoration: none;
+	color: #222;
+	font-size: 14px;
+}
+
+.resources-card dd {
+	color: #777;
+	margin: 0 0 10px 0;
+}
