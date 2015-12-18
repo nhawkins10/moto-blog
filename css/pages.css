@@ -1,3 +1,6 @@
+/*
+ *		Resources page
+ */
 .resources-card > .mdl-card__title {
 	font-size: 18px;
 }
@@ -11,4 +14,20 @@
 .resources-card dd {
 	color: #777;
 	margin: 0 0 10px 0;
+}
+
+/*
+ *		About page
+ */
+ .profile-image {
+	width: 100%;
+	max-width: 500px;
+}
+
+.about-image {
+	text-align: center;
+}
+
+.about-text p {
+	font-size: 18px;
 }
