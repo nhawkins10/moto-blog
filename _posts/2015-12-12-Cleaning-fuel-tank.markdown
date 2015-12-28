@@ -17,4 +17,7 @@ items:
 - item:
     link: 4.JPG
     comment: I let the tank soak for a couple more days before I emptied it out again. It looks a lot better now.
+- item:
+    link: 5.JPG
+    comment: I had to remove the petcock and clean it out as well. There was rust and sludge built up on the filter inside. I wiped out the inside with q-tips and rinsed the filter screen out and it allowed fuel to flow so much better after that. This is what the inside looked like after I cleaned it.
 ---
